@@ -154,7 +154,7 @@ $(function(){
     all3Cohorts.cohorts.push(javaData);
     console.log(all3Cohorts.cohorts[1].totalCarbon());
     let totalC = javaData.totalCarbon();
-    let averageC = javaData.averageCarbon();
+    let averageC = (javaData.averageCarbon()).toFixed(2);
     let stdDev = (javaData.standardDeviation()).toFixed(2);
     $("#javaTotal").text(totalC);
     $("#javaAverage").text(averageC);
@@ -174,7 +174,7 @@ $(function(){
     all3Cohorts.cohorts.push(jSData);
     console.log(all3Cohorts.cohorts[2].averageCarbon());
     let totalC = jSData.totalCarbon();
-    let averageC = jSData.averageCarbon();
+    let averageC = (jSData.averageCarbon()).toFixed(2);
     let stdDev = (jSData.standardDeviation()).toFixed(2);
     $("#jSTotal").text(totalC);
     $("#jSAverage").text(averageC);
