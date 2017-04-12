@@ -59,7 +59,7 @@ Statistics.prototype.pValue1 = function(){
   var tValue = this.runTTest1();
   console.log(dF);
 
-  return pValue;
+  return dF;
 }
 
 // P-VALUE FOR INTRO VS JAVASCRIPT
@@ -69,7 +69,7 @@ Statistics.prototype.pValue2 = function(){
   var tValue = this.runTTest1();
   console.log(dF);
 
-  return pValue;
+  return dF;
 }
 
 // P-VALUE FOR JAVA VS JAVASCRIPT
@@ -79,7 +79,7 @@ Statistics.prototype.pValue3 = function(){
   var tValue = this.runTTest1();
   console.log(dF);
 
-  return pValue;
+  return dF;
 }
 
 
@@ -187,8 +187,9 @@ $(function(){
     tValue = (all3Cohorts.runTTest1()).toFixed(3);
     console.log(tValue);
     $("#intro-java-T-result").text(tValue);
-    pValue = all3Cohorts.pValue1();
-    console.log(pValue);
+    dF = all3Cohorts.pValue1();
+    console.log(dF);
+    $("#intro-java-dF-result").text(dF);
   })
 
 // BUTTON FUNCTION TO CALL T TEST BETWEEN INTRO AND JAVASCRIPT
@@ -196,8 +197,9 @@ $(function(){
     tValue = (all3Cohorts.runTTest2()).toFixed(3);
     console.log(tValue);
     $("#intro-jS-T-result").text(tValue);
-    pValue = all3Cohorts.pValue2();
-    console.log(pValue);
+    dF = all3Cohorts.pValue2();
+    console.log(dF);
+    $("#intro-jS-dF-result").text(dF);
   })
 
 // BUTTON FUNCTION TO CALL T TEST BETWEEN JAVA AND JAVASCRIPT
@@ -205,8 +207,9 @@ $(function(){
     tValue = (all3Cohorts.runTTest3()).toFixed(3);
     console.log(tValue);
     $("#java-jS-T-result").text(tValue);
-    pValue = all3Cohorts.pValue3();
-    console.log(pValue);
+    dF = all3Cohorts.pValue3();
+    console.log(dF);
+    $("#java-jS-dF-result").text(dF);
   })
 
 });
