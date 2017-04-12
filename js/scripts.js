@@ -22,10 +22,10 @@ Cohort.prototype.standardDeviation = function() {
   var sum = 0;
   var avg = this.averageCarbon();
   this.emissions.forEach(function(student){
-    sum += Math.abs(student - avg);
+    sum += (Math.abs(student - avg) ** 2);
   });
-  sqSum = sum ** 2;
-  beforeSQRT = sqSum / (this.emissions.length -1);
+
+  beforeSQRT = sum / (this.emissions.length -1);
   stDev = Math.sqrt(beforeSQRT);
   console.log(stDev);
   return stDev;
