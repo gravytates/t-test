@@ -30,7 +30,6 @@ Cohort.prototype.standardDeviation = function() {
 
   beforeSQRT = sum / (this.emissions.length -1);
   stDev = Math.sqrt(beforeSQRT);
-  console.log(stDev);
   return stDev;
 }
 
@@ -46,7 +45,7 @@ $(function(){
       introData.emissions.push(emission);
     });
     introCohort.cohorts.push(introData);
-    console.log(introCohort.cohorts);
+    console.log(introCohort.cohorts[0].totalCarbon());
     let totalC = introData.totalCarbon();
     let averageC = (introData.averageCarbon()).toFixed(2);
     let stdDev = (introData.standardDeviation()).toFixed(2);
