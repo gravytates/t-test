@@ -50,4 +50,18 @@ $(function(){
     $("#javaAverage").text(averageC);
 
   })
+
+  $("#jSBtn").click(function(){
+    let jSData = new Cohort();
+    $("#jS-class input").each(function(){
+      let emission = parseFloat($(this).val());
+      jSData.emissions.push(emission);
+    });
+    console.log(jSData.emissions);
+    let totalC = jSData.totalCarbon();
+    let averageC = jSData.averageCarbon();
+    $("#jSTotal").text(totalC);
+    $("#jSAverage").text(averageC);
+
+  })
 });
