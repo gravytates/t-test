@@ -1,6 +1,9 @@
-function Cohort(totalCarbon){
+function Cohort(){
   this.emissions = [];
-  // this.totalCarbon = totalCarbon;
+}
+
+function tTest(average, stDev){
+  this.cohorts = [];
 }
 
 
@@ -36,49 +39,58 @@ Cohort.prototype.standardDeviation = function() {
 
 $(function(){
   $("#introBtn").click(function(){
+    let introCohort = new tTest();
     let introData = new Cohort();
     $("#intro-class input").each(function(){
       let emission = parseFloat($(this).val());
       introData.emissions.push(emission);
     });
+    introCohort.cohorts.push(introData);
+    console.log(introCohort.cohorts);
     let totalC = introData.totalCarbon();
-    let averageC = introData.averageCarbon();
+    let averageC = (introData.averageCarbon()).toFixed(2);
     let stdDev = (introData.standardDeviation()).toFixed(2);
     $("#introTotal").text(totalC);
     $("#introAverage").text(averageC);
     $("#introStDev").text(stdDev);
 
-  })
-
-  $("#javaBtn").click(function(){
-    let javaData = new Cohort();
-    $("#java-class input").each(function(){
-      let emission = parseFloat($(this).val());
-      javaData.emissions.push(emission);
-    });
-    console.log(javaData.emissions);
-    let totalC = javaData.totalCarbon();
-    let averageC = javaData.averageCarbon();
-    let stdDev = (javaData.standardDeviation()).toFixed(2);
-    $("#javaTotal").text(totalC);
-    $("#javaAverage").text(averageC);
-    $("#javaStDev").text(stdDev);
 
   })
 
-  $("#jSBtn").click(function(){
-    let jSData = new Cohort();
-    $("#jS-class input").each(function(){
-      let emission = parseFloat($(this).val());
-      jSData.emissions.push(emission);
-    });
-    console.log(jSData.emissions);
-    let totalC = jSData.totalCarbon();
-    let averageC = jSData.averageCarbon();
-    let stdDev = (jSData.standardDeviation()).toFixed(2);
-    $("#jSTotal").text(totalC);
-    $("#jSAverage").text(averageC);
-    $("#jSStDev").text(stdDev);
+  // $("#javaBtn").click(function(){
+  //   let javaData = new Cohort();
+  //   $("#java-class input").each(function(){
+  //     let emission = parseFloat($(this).val());
+  //     javaData.emissions.push(emission);
+  //   });
+  //   console.log(javaData.emissions);
+  //   let totalC = javaData.totalCarbon();
+  //   let averageC = javaData.averageCarbon();
+  //   let stdDev = (javaData.standardDeviation()).toFixed(2);
+  //   $("#javaTotal").text(totalC);
+  //   $("#javaAverage").text(averageC);
+  //   $("#javaStDev").text(stdDev);
+  //
+  // })
+  //
+  // $("#jSBtn").click(function(){
+  //   let jSData = new Cohort();
+  //   $("#jS-class input").each(function(){
+  //     let emission = parseFloat($(this).val());
+  //     jSData.emissions.push(emission);
+  //   });
+  //   console.log(jSData.emissions);
+  //   let totalC = jSData.totalCarbon();
+  //   let averageC = jSData.averageCarbon();
+  //   let stdDev = (jSData.standardDeviation()).toFixed(2);
+  //   $("#jSTotal").text(totalC);
+  //   $("#jSAverage").text(averageC);
+  //   $("#jSStDev").text(stdDev);
+  //
+  // })
 
-  })
+  // $("#intro-v-jS").click(function(){
+  //
+  // })
+
 });
